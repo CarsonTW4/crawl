@@ -107,7 +107,10 @@ bool melee_attack::handle_phase_attempted()
         // Unrands with secondary effects that can harm nearby friendlies.
         // Don't prompt for confirmation (and leak information about the
         // monster's position) if the player can't see the monster.
-        if (weapon && is_unrandom_artefact(*weapon, UNRAND_DEVASTATOR)
+        
+        unrand_art_handle();
+        
+      /*if (weapon && is_unrandom_artefact(*weapon, UNRAND_DEVASTATOR)
             && you.can_see(*defender))
         {
 
@@ -182,6 +185,9 @@ bool melee_attack::handle_phase_attempted()
                 return false;
             }
         }
+        
+        
+        
         else if (!cleave_targets.empty())
         {
             targeter_cleave hitfunc(attacker, defender->pos());
@@ -196,9 +202,11 @@ bool melee_attack::handle_phase_attempted()
         {
             cancel_attack = true;
             return false;
-        }
-    }
-
+        }*/
+    
+    
+    
+    }    
     if (attacker->is_player())
     {
         // Set delay now that we know the attack won't be cancelled.
